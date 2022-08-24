@@ -30,6 +30,9 @@
         <li class="nav-card-item">
           <a class="nav-link" href="blog">Blog</a>
         </li>
+        <li class="nav-card-item">
+          <a class="nav-link" href="post-job">post Job</a>
+        </li>
       </ul>
       <ul class="right navbar-nav ms-auto">
         <li class="nav-card-item-right">
@@ -209,20 +212,7 @@
           </div>
         </div>
         <div class="sidebar col-lg-4">
-          <div class="input-group">
-            <div class="form-outline">
-              <input
-                id="search-input"
-                type="search"
-                id="form1"
-                class="form-control"
-                placeholder="search"
-              />
-            </div>
-            <button id="search-button" type="button" class="btn dark">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
+         
 
           <div class="search-by-sidebar mt-5">
             <h3>Search by <span class="green">category</span></h3>
@@ -240,49 +230,32 @@
               data-bs-ride="carousel"
               data-bs-interval="false"
             >
-
               <div class="carousel-inner text-center">
                 <div class="carousel-item active">
                   <div class="card-item">
                     <div class="photo">
                       <img
                         class="main-state"
-                        src="img/icon/business-development.svg"
+                        src="images/icon/business-development.svg"
                         alt=""
                       />
                       <img
                         class="hover"
-                        src="img/icon/business-development-hover.svg"
+                        src="images/icon/business-development-hover.svg"
                         alt=""
                       />
                     </div>
                     <p>Business<br />
                       Development</p>
                   </div>
-
+               
                   <div class="card-item">
                     <div class="photo">
                       <img
                         class="main-state"
-                        src="images/icon/graphic.svg"
+                        src="images/icon/pm.svg"
                         alt=""
                       />
-                      <img
-                        class="hover"
-                        src="images/icon/graphic-hover.svg"
-                        alt=""
-                      />
-                    </div>
-                    <p>Graphic<br />
-                      Designer</p>
-                  </div>
-
-                </div>
-
-                <div class="carousel-item">
-                  <div class="card-item">
-                    <div class="photo">
-                      <img class="main-state" src="images/icon/pm.svg" alt="" />
                       <img
                         class="hover"
                         src="images/icon/pm-hover.svg"
@@ -292,44 +265,9 @@
                     <p>Project<br />
                       Management</p>
                   </div>
-
-                  <div class="card-item">
-                    <div class="photo">
-                      <img
-                        class="main-state"
-                        src="images/icon/marketing.svg"
-                        alt=""
-                      />
-                      <img
-                        class="hover"
-                        src="images/icon/marketing-active.svg"
-                        alt=""
-                      />
-                    </div>
-                    <p>Marketing &<br />
-                      Communication</p>
-                  </div>
-
-                </div>
-              </div>
-              <div class="carousel-nav">
-                <a
-                  class="nav-item"
-                  role="button"
-                  data-bs-target="#carouselsidebar"
-                  data-bs-slide="prev"
-                ><img src="images/icon/prew-arrow.svg" alt="" /></a>
-                <a
-                  class="nav-item"
-                  role="button"
-                  data-bs-target="#carouselsidebar"
-                  data-bs-slide="next"
-                ><img src="images/icon/next-arrow.svg" alt="" /></a>
               </div>
             </div>
-
           </div>
-
           <div class="recent-posts my-5">
             <h4>Recent <span class="green">Posts</span></h4>
             <div class="post-item">
@@ -440,7 +378,7 @@
         <p class="text-muted">
           Sign up and receive the latest tips via email.
         </p>
-        <form id="subscribe" action="">
+        <form id="subscribe" action="/subscribe" method="post">
           <label for="email">Youre e-mail:</label>
           <input type="email" placeholder="e-mail:" name="email" required />
           <button type="submit" class="main-btn">Subscribe</button>

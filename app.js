@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
+const dbURL =
+  "mongodb+srv://karim:karim291101@hyneed.j4huu4l.mongodb.net/hyneed?retryWrites=true&w=majority";
 var app = express();
 
 // view engine setup
@@ -19,12 +21,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-mongoose.connect("mongodb://localhost/hlpyeed", (err) => {
-  if (err) {
-    console.log(err);
+mongoose.connect(
+  "mongodb://localhost/hlpyeed",
+  { useNewUrlParser: true },
+  (err) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log("connected");
   }
-  console.log("connected");
-});
+);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
@@ -34,6 +40,8 @@ app.use("/blog", indexRouter);
 app.use("/register", indexRouter);
 app.use("/login", indexRouter);
 app.use("single-post", indexRouter);
+app.use("/post-job", indexRouter);
+app.use("/subscribe", indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

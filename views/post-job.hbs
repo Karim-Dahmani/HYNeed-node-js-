@@ -1,0 +1,319 @@
+<nav class="navbar navbar-expand-xl fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index"><img
+        claass="w-100"
+        src="images/icon/company-logo.svg"
+        alt=""
+      /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-card-item">
+          <a class="nav-link active" href="./">Home</a>
+        </li>
+        <li class="nav-card-item">
+          <a class="nav-link" href="about">About</a>
+        </li>
+        <li class="nav-card-item">
+          <a class="nav-link" href="contact">Contact</a>
+        </li>
+        <li class="nav-card-item">
+          <a class="nav-link" href="blog">Blog</a>
+        </li>
+        <li class="nav-card-item">
+          <a class="nav-link" href="post-job">post Job</a>
+        </li>
+      </ul>
+      <ul class="right navbar-nav ms-auto">
+        <li class="nav-card-item-right">
+          <a class="nav-link" href="login">Sign in</a>
+        </li>
+        <li class="nav-card-item-right create-account">
+          <a class="nav-link" href="register">Create account</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="contact-page">
+            <h2 class="underscore mb-5">You're
+              <span class="green">here to hire.</span>
+              We're here to help.
+            </h2>
+            <div class="line"></div>
+            <p>Post your job, interview candidates, and make offers all on
+              HYNeed. Start hiring today.
+            </p>
+            <div class="line"></div>
+
+            <form id="contactForm" action="/insertjob" method="post">
+
+              <!-- Name input -->
+              <div class="mb-3">
+                <label for="companyN">Company</label>
+                <input
+                  class="form-control"
+                  id="companyname"
+                  type="text"
+                  data-sb-validations="required"
+                  name="Companyname"
+                />
+                <div
+                  class="invalid-feedback"
+                  data-sb-feedback="name:required"
+                >Name is required.</div>
+              </div>
+
+              <!-- Email address input -->
+              <div class="mb-3">
+                <label for="companyN">Email</label>
+                <input
+                  class="form-control"
+                  id="emailAddress"
+                  type="email*"
+                  data-sb-validations="required, email"
+                  name="emailcompany"
+                />
+                <div
+                  class="invalid-feedback"
+                  data-sb-feedback="emailAddress:required"
+                >Email Address is required.</div>
+                <div
+                  class="invalid-feedback"
+                  data-sb-feedback="emailAddress:email"
+                >Email Address Email is not valid.</div>
+              </div>
+
+              <!-- Form submissions success message -->
+              <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">Form submission successful!</div>
+              </div>
+
+              <!-- Form submissions error message -->
+              <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">Error sending message!</div>
+              </div>
+
+              <!-- Message input -->
+              <div class="mb-3">
+                <label for="companyN">Description</label>
+                <textarea
+                  class="form-control"
+                  id="desc"
+                  type="text"
+                  placeholder="Leave a Message"
+                  style="height: 10rem;"
+                  data-sb-validations="required"
+                  name="Description"
+                ></textarea>
+                <div
+                  class="invalid-feedback"
+                  data-sb-feedback="message:required"
+                >Message is required.</div>
+              </div>
+              <div class="mb-3">
+                <label for="companyN">skills needed</label>
+                <input
+                  class="form-control"
+                  id="skillsn"
+                  type="text"
+                  data-sb-validations="required"
+                  name="skills"
+                />
+                <div
+                  class="invalid-feedback"
+                  data-sb-feedback="name:required"
+                >skills is required.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="companyN">Job Title</label>
+                <input
+                  class="form-control"
+                  id="jobtitle"
+                  type="text"
+                  data-sb-validations="required"
+                  name="titlejob"
+                />
+                <div
+                  class="invalid-feedback"
+                  data-sb-feedback="name:required"
+                >Job title is required.</div>
+              </div>
+              <div class="mb-3">
+                <label for="Cat">Category</label>
+                <select class="form-select" name="categorie" id="Cat">
+                  <option value="">--Please choose an option--</option>
+                  <option value="it">IT</option>
+                  <option value="pm">Projet Management</option>
+                </select>
+                <div class="invalid-feedback" data-sb-feedback="name:required">
+                  Category is required.</div>
+              </div>
+              <div class="mb-3">
+                <label for="country">Country</label>
+                <select class="form-select" name="country" id="country">
+                  <option value="">--Please choose an option--</option>
+                  <option value="maroc">Maroc</option>
+                  <option value="france">France </option>
+                  <option value="us">United States</option>
+                </select>
+                <div
+                  class="invalid-feedback"
+                  data-sb-feedback="name:required"
+                >Country is required.</div>
+              </div>
+
+              <!-- Form submit button -->
+              <div class="d-grid">
+                <button
+                  class="main-btn mt-0 disabled"
+                  id="submitButton"
+                  type="submit"
+                >Post a Job</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="sidebar col-lg-4">
+
+          <div class="search-by-sidebar mt-5">
+            <h3>Search by <span class="green">category</span></h3>
+            <a href="">All category
+              <img
+                style="width: 20px; margin-left: 20px;"
+                src="/images/icon/arrow-right-icon.svg"
+                alt=""
+              /></a>
+
+            <!--Start carousel-->
+              <div
+              id="carouselsidebar"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="false"
+            >
+              <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                  <div class="card-item">
+                    <div class="photo">
+                      <img
+                        class="main-state"
+                        src="images/icon/business-development.svg"
+                        alt=""
+                      />
+                      <img
+                        class="hover"
+                        src="images/icon/business-development-hover.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>Business<br />
+                      Development</p>
+                  </div>
+               
+                  <div class="card-item">
+                    <div class="photo">
+                      <img
+                        class="main-state"
+                        src="images/icon/pm.svg"
+                        alt=""
+                      />
+                      <img
+                        class="hover"
+                        src="images/icon/pm-hover.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p>Project<br />
+                      Management</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container text-center text-md-start">
+    <div class="footer-wrap">
+      <div class="about">
+        <img src="images/icon/company-logo.svg" alt="" />
+        <p class="text-muted py-4">
+          Start working with HYNeed which can provide you with all the tools
+          needed to run an effcieint business remotely.
+        </p>
+        <div class="social-media">
+          <a href="" class="me-2 text-reset"><img
+              src="images/icon/facebook-icon.svg"
+              alt=""
+            /></a>
+          <a href="" class="me-2 text-reset"><img
+              src="images/icon/twitter-icon.svg"
+              alt=""
+            /></a>
+          <a href="" class="me-2 text-reset"><img
+              src="images/icon/linkedin-icon.svg"
+              alt=""
+            /></a>
+          <a href="" class="me-2 text-reset"><img
+              src="images/icon/instagram-icon.svg"
+              alt=""
+            /></a>
+        </div>
+      </div>
+
+      <div class="company">
+        <h6 class="fw-bold">Company</h6>
+        <p><a href="aboutus">About us</a></p>
+        <p><a href="contact">Services</a></p>
+        <p><a href="login">Login</a></p>
+      </div>
+
+      <div class="useful-links">
+        <h6 class="fw-bold">IT Jobs</h6>
+        <p><a href=""> java </a></p>
+        <p><a href="">.Net</a></p>
+        <p><a href=""> python</a></p>
+
+      </div>
+
+      <div class="newsletter">
+        <h6 class="fw-bold">Newsletter</h6>
+        <p class="text-muted">
+          Sign up and receive the latest tips via email.
+        </p>
+        <form id="subscribe" action="">
+          <label for="email">Youre e-mail:</label>
+          <input type="email" placeholder="e-mail:" name="email" required />
+          <button type="submit" class="main-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>
+        &copy; 2022 HYNeed | Created by
+        <a href="./">mohammed karim</a>
+      </p>
+    </div>
+  </div>
+</footer>

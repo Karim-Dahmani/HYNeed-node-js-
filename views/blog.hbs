@@ -30,6 +30,9 @@
         <li class="nav-card-item">
           <a class="nav-link" href="blog">Blog</a>
         </li>
+        <li class="nav-card-item">
+          <a class="nav-link" href="post-job">post Job</a>
+        </li>
       </ul>
       <ul class="right navbar-nav ms-auto">
         <li class="nav-card-item-right">
@@ -48,135 +51,34 @@
       <div class="row">
         <div class="col-lg-8">
           <div class="all-posts">
-            <div class="post-item">
-              <div class="post-img">
-                <img src="images/post-1.png" alt="" />
-              </div>
-              <div class="post-main-info">
-                <h4>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h4>
-                <div class="post-meta">
-                  <span><i class="far fa-user"></i>
-                    Posted by someone</span><span><i
-                      class="far fa-calendar"
-                    ></i>
-                    30 07 2021</span><span><i class="far fa-comment-alt"></i>
-                    0 comments</span>
+            {{#each items}}
+              <div class="post-item">
+                <div class="post-main-info">
+                  <h4>
+                    {{this.JobTitle}}.
+                  </h4>
+                  <div class="post-meta">
+                    <span><i class="far fa-user"></i>
+                      {{this.CompanyName}}</span>
+                    <span><i class="far fa-lacation"></i>
+                      {{this.Localisation}}
+                    </span>
+                  </div>
+                  <p class="desc">
+                    <span>Description :</span>
+                    {{this.Description}}
+                  </p>
+                  <p class="skills">
+                    <span>Key skills :</span>
+                    {{this.Skills}}
+                  </p>
+                  <a href="single-post" class="main-btn"> Apply</a>
+                  <span><i
+                      class="far fa-calendar published"
+                    ></i>{{this.PublishedDate}}</span>
                 </div>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Harum beatae pariatur sequi vitae quia velit? Facere maxime
-                  delectus cum voluptas unde accusantium rerum ullam rem
-                  asperiores. Alias, omnis quidem....
-                </p>
-                <a href="single-post" class="main-btn">Read More</a>
               </div>
-            </div>
-
-            <div class="post-item">
-              <div class="post-img">
-                <img src="images/post-2.png" alt="" />
-              </div>
-              <div class="post-main-info">
-                <h4>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h4>
-                <div class="post-meta">
-                  <span><i class="far fa-user"></i>
-                    Posted by someone</span><span><i
-                      class="far fa-calendar"
-                    ></i>
-                    30 07 2021</span><span><i class="far fa-comment-alt"></i>
-                    0 comments</span>
-                </div>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Harum beatae pariatur sequi vitae quia velit? Facere maxime
-                  delectus cum voluptas unde accusantium rerum ullam rem
-                  asperiores. Alias, omnis quidem....
-                </p>
-                <a href="single-post" class="main-btn">Read More</a>
-              </div>
-            </div>
-
-            <div class="post-item">
-              <div class="post-img">
-                <img src="images/post-3.png" alt="" />
-              </div>
-              <div class="post-main-info">
-                <h4>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h4>
-                <div class="post-meta">
-                  <span><i class="far fa-user"></i>
-                    Posted by someone</span><span><i
-                      class="far fa-calendar"
-                    ></i>
-                    30 07 2021</span><span><i class="far fa-comment-alt"></i>
-                    0 comments</span>
-                </div>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Harum beatae pariatur sequi vitae quia velit? Facere maxime
-                  delectus cum voluptas unde accusantium rerum ullam rem
-                  asperiores. Alias, omnis quidem....
-                </p>
-                <a href="single-post" class="main-btn">Read More</a>
-              </div>
-            </div>
-
-            <div class="post-item">
-              <div class="post-img">
-                <img src="images/post-1.png" alt="" />
-              </div>
-              <div class="post-main-info">
-                <h4>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h4>
-                <div class="post-meta">
-                  <span><i class="far fa-user"></i>
-                    Posted by someone</span><span><i
-                      class="far fa-calendar"
-                    ></i>
-                    30 07 2021</span><span><i class="far fa-comment-alt"></i>
-                    0 comments</span>
-                </div>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Harum beatae pariatur sequi vitae quia velit? Facere maxime
-                  delectus cum voluptas unde accusantium rerum ullam rem
-                  asperiores. Alias, omnis quidem....
-                </p>
-                <a href="single-post" class="main-btn">Read More</a>
-              </div>
-            </div>
-
-            <div class="post-item">
-              <div class="post-img">
-                <img src="images/post-2.png" alt="" />
-              </div>
-              <div class="post-main-info">
-                <h4>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h4>
-                <div class="post-meta">
-                  <span><i class="far fa-user"></i>
-                    Posted by someone</span><span><i
-                      class="far fa-calendar"
-                    ></i>
-                    30 07 2021</span><span><i class="far fa-comment-alt"></i>
-                    0 comments</span>
-                </div>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Harum beatae pariatur sequi vitae quia velit? Facere maxime
-                  delectus cum voluptas unde accusantium rerum ullam rem
-                  asperiores. Alias, omnis quidem....
-                </p>
-                <a href="single-post" class="main-btn">Read More</a>
-              </div>
-            </div>
+            {{/each}}
           </div>
           <nav aria-label="blog navigation">
             <ul class="pagination">
@@ -189,7 +91,10 @@
               <li class="page-item">
                 <a class="page-link active" href="#">1</a>
               </li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a
+                  class="page-link"
+                  href="../page2"
+                >2</a></li>
               <li class="page-item"><a class="page-link" href="#">3</a></li>
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
@@ -200,22 +105,8 @@
             </ul>
           </nav>
         </div>
-
         <div class="sidebar col-lg-4">
-          <div class="input-group">
-            <div class="form-outline">
-              <input
-                id="search-input"
-                type="search"
-                id="form1"
-                class="form-control"
-                placeholder="search"
-              />
-            </div>
-            <button id="search-button" type="button" class="btn dark">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
+         
 
           <div class="search-by-sidebar mt-5">
             <h3>Search by <span class="green">category</span></h3>
@@ -227,7 +118,7 @@
               /></a>
 
             <!--Start carousel-->
-            <div
+              <div
               id="carouselsidebar"
               class="carousel slide"
               data-bs-ride="carousel"
@@ -248,81 +139,26 @@
                         alt=""
                       />
                     </div>
-                    <p>
-                      Business<br />
-                      Development
-                    </p>
+                    <p>Business<br />
+                      Development</p>
                   </div>
-
+  
                   <div class="card-item">
                     <div class="photo">
                       <img
                         class="main-state"
-                        src="images/icon/graphic.svg"
+                        src="images/icon/pm.svg"
                         alt=""
                       />
-                      <img
-                        class="hover"
-                        src="images/icon/graphic-hover.svg"
-                        alt=""
-                      />
-                    </div>
-                    <p>
-                      Graphic<br />
-                      Designer
-                    </p>
-                  </div>
-                </div>
-
-                <div class="carousel-item">
-                  <div class="card-item">
-                    <div class="photo">
-                      <img class="main-state" src="images/icon/pm.svg" alt="" />
                       <img
                         class="hover"
                         src="images/icon/pm-hover.svg"
                         alt=""
                       />
                     </div>
-                    <p>
-                      Project<br />
-                      Management
-                    </p>
+                    <p>Project<br />
+                      Management</p>
                   </div>
-
-                  <div class="card-item">
-                    <div class="photo">
-                      <img
-                        class="main-state"
-                        src="images/icon/marketing.svg"
-                        alt=""
-                      />
-                      <img
-                        class="hover"
-                        src="images/icon/marketing-active.svg"
-                        alt=""
-                      />
-                    </div>
-                    <p>
-                      Marketing &<br />
-                      Communication
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-nav">
-                <a
-                  class="nav-item"
-                  role="button"
-                  data-bs-target="#carouselsidebar"
-                  data-bs-slide="prev"
-                ><img src="images/icon/prew-arrow.svg" alt="" /></a>
-                <a
-                  class="nav-item"
-                  role="button"
-                  data-bs-target="#carouselsidebar"
-                  data-bs-slide="next"
-                ><img src="images/icon/next-arrow.svg" alt="" /></a>
               </div>
             </div>
           </div>
@@ -436,7 +272,7 @@
         <p class="text-muted">
           Sign up and receive the latest tips via email.
         </p>
-        <form id="subscribe" action="">
+        <form id="subscribe" action="/subscribe" method="post">
           <label for="email">Youre e-mail:</label>
           <input type="email" placeholder="e-mail:" name="email" required />
           <button type="submit" class="main-btn">Subscribe</button>

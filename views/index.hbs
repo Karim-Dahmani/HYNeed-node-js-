@@ -30,6 +30,9 @@
             <li class="nav-card-item">
               <a class="nav-link" href="blog">Blog</a>
             </li>
+              <li class="nav-card-item">
+              <a class="nav-link" href="post-job">post Job</a>
+            </li>
           </ul>
           <ul class="right navbar-nav ms-auto">
             <li class="nav-card-item-right">
@@ -131,24 +134,7 @@
                   </p>
                 </div>
 
-                <div class="card-item">
-                  <div class="photo">
-                    <img
-                      class="main-state"
-                      src="images/icon/graphic.svg"
-                      alt=""
-                    />
-                    <img
-                      class="hover"
-                      src="images/icon/graphic-hover.svg"
-                      alt=""
-                    />
-                  </div>
-                  <p>
-                    Graphic<br />
-                    Designer
-                  </p>
-                </div>
+                
 
                 <div class="card-item">
                   <div class="photo">
@@ -160,26 +146,6 @@
                     Management
                   </p>
                 </div>
-
-                <div class="card-item">
-                  <div class="photo">
-                    <img
-                      class="main-state"
-                      src="images/icon/marketing.svg"
-                      alt=""
-                    />
-                    <img
-                      class="hover"
-                      src="images/icon/marketing-active.svg"
-                      alt=""
-                    />
-                  </div>
-                  <p>
-                    Marketing &<br />
-                    Communication
-                  </p>
-                </div>
-              </div>
 
             <div class="carousel-nav">
               <a
@@ -200,8 +166,11 @@
           </div>
         </div>
         <!--job offers-->
+
+        
         <div class="job-offers">
           <h1>Job <span class="green">offers</span></h1>
+         
           <a href=""
             >All offers
             <img
@@ -213,26 +182,24 @@
             <div class="image col-md-4">
               <img src="images/job-offers.png" alt="" />
             </div>
-            <div class="col-md-4">
+        {{#each items  }}
+        {{#each this}}
+             <div class="col-md-4">
               <div class="offert-wrapper">
                 <div class="offert">
                   <div>
                     <div class="offert-description">
-                      <div class="company-logo">
-                        <img src="images/icon/go-icon.svg" alt="" />
-                      </div>
+                    
                       <div class="description">
-                        <p class="company-name">Go! SM</p>
+                        <p class="company-name">{{this.JobTitle}}</p>
                         <p class="description">
-                          It has survived not only five centuries, but also the
-                          leap into electronic typesetting, remaining
-                          essentially unchanged.
+                          {{this.Description}}
                         </p>
                       </div>
                     </div>
                     <div class="offert-meta">
                       <p class="location">
-                        location: <span class="city">Stuttgart</span>
+                        location: <span class="city">{{this.Localisation}}</span>
                       </p>
                       <p class="offert-counter">
                         Jobs: <span class="green"><strong>3</strong></span>
@@ -240,98 +207,12 @@
                     </div>
                   </div>
                 </div>
-                <a href="" class="main-btn">See details</a>
+                <a href="single-post" class="main-btn">See details</a>
               </div>
-              <div class="offert-wrapper">
-                <div class="offert">
-                  <div>
-                    <div class="offert-description">
-                      <div class="company-logo">
-                        <img src="images/icon/create-paper-icon.svg" alt="" />
-                      </div>
-                      <div class="description">
-                        <p class="company-name">Create Paper</p>
-                        <p class="description">
-                          It has survived not only five centuries, but also the
-                          leap into electronic typesetting, remaining
-                          essentially unchanged.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="offert-meta">
-                      <p class="location">
-                        location: <span class="city">Pekin</span>
-                      </p>
-                      <p class="offert-counter">
-                        Jobs: <span class="green"><strong>5</strong></span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <a href="" class="main-btn">See details</a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="offert-wrapper">
-                <div class="offert">
-                  <div>
-                    <div class="offert-description">
-                      <div class="company-logo">
-                        <img src="images/icon/social-road-icon.svg" alt="" />
-                      </div>
-                      <div class="description">
-                        <p class="company-name">Social Road</p>
-                        <p class="description">
-                          It has survived not only five centuries, but also the
-                          leap into electronic typesetting, remaining
-                          essentially unchanged.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="offert-meta">
-                      <p class="location">
-                        location: <span class="city">San Francisco</span>
-                      </p>
-                      <p class="offert-counter">
-                        Jobs: <span class="green"><strong>2</strong></span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <a href="" class="main-btn">See details</a>
-              </div>
-              <div class="offert-wrapper">
-                <div class="offert">
-                  <div>
-                    <div class="offert-description">
-                      <div class="company-logo">
-                        <img src="images/icon/point-design-icon.svg" alt="" />
-                      </div>
-                      <div class="description">
-                        <p class="company-name">Point Design</p>
-                        <p class="description">
-                          It has survived not only five centuries, but also the
-                          leap into electronic typesetting, remaining
-                          essentially unchanged.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="offert-meta">
-                      <p class="location">
-                        location: <span class="city">Tempe</span>
-                      </p>
-                      <p class="offert-counter">
-                        Jobs: <span class="green"><strong>8</strong></span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <a href="" class="main-btn">See details</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+            </div> 
+             {{/each}}
+        {{/each}}      
+ 
         <!--Top Notch Service-->
         <div class="service text-center">
           <h1>Top Notch <span class="green">Service</span></h1>
@@ -366,11 +247,10 @@
             <div class="col-md-5 news-text">
               <h2>Get your update news</h2>
               <p>
-                If you going to use a passage of Lotem Ipsum, you need to be
-                sure there isn’t anything embarrassing.
+                Sign up and receive the latest tips via email.
               </p>
             </div>
-            <form name="form1" action="">
+            <form name="form1" action="subscribe" method="post">
             <div  class="col-md-7 news-form">
               <input
                 type="email"
@@ -438,7 +318,7 @@
             <p class="text-muted">
               Sign up and receive the latest tips via email.
             </p>
-            <form id="subscribe" action="">
+            <form id="subscribe" action="subscribe" method="post">
               <label for="email">Youre e-mail:</label>
               <input type="email" placeholder="e-mail:" name="email" required />
               <button type="submit" class="main-btn">Subscribe</button>
@@ -453,4 +333,3 @@
         </div>
       </div>
     </footer>
- 

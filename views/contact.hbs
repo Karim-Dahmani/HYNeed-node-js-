@@ -30,6 +30,9 @@
         <li class="nav-card-item">
           <a class="nav-link" href="blog">Blog</a>
         </li>
+        <li class="nav-card-item">
+          <a class="nav-link" href="post-job">post Job</a>
+        </li>
       </ul>
       <ul class="right navbar-nav ms-auto">
         <li class="nav-card-item-right">
@@ -38,6 +41,7 @@
         <li class="nav-card-item-right create-account">
           <a class="nav-link" href="register">Create account</a>
         </li>
+
       </ul>
     </div>
   </div>
@@ -52,22 +56,21 @@
               <span class="green">let us know</span>
               if you have any questions</h2>
             <div class="line"></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              sunt optio consequuntur ducimus odit. Deleniti optio saepe unde
-              omnis. Sapiente aliquam repellendus error id veniam totam dolores
-              recusandae non dolorum?</p>
+            <p>We welcome your feedback and suggestions. Please contact 
+              us by commenting if you have something to say.</p>
             <div class="line"></div>
 
-            <form id="contactForm">
+            <form id="contactForm" action="/getcontact" method="post">
 
               <!-- Name input -->
               <div class="mb-3">
                 <input
                   class="form-control"
-                  id="name"
+                  id="contactname"
                   type="text"
                   placeholder="Name *"
                   data-sb-validations="required"
+                    name="contactname"
                 />
                 <div
                   class="invalid-feedback"
@@ -83,6 +86,7 @@
                   type="email*"
                   placeholder="Email Address *"
                   data-sb-validations="required, email"
+                    name="contactemail"
                 />
                 <div
                   class="invalid-feedback"
@@ -114,6 +118,7 @@
                   placeholder="Leave a Message"
                   style="height: 10rem;"
                   data-sb-validations="required"
+                    name="contactmessage"
                 ></textarea>
                 <div
                   class="invalid-feedback"
@@ -134,20 +139,6 @@
         </div>
 
         <div class="sidebar col-lg-4">
-          <div class="input-group">
-            <div class="form-outline">
-              <input
-                id="search-input"
-                type="search"
-                id="form1"
-                class="form-control"
-                placeholder="search"
-              />
-            </div>
-            <button id="search-button" type="button" class="btn dark">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
 
           <div class="search-by-sidebar mt-5">
             <h3>Search by <span class="green">category</span></h3>
@@ -165,7 +156,6 @@
               data-bs-ride="carousel"
               data-bs-interval="false"
             >
-
               <div class="carousel-inner text-center">
                 <div class="carousel-item active">
                   <div class="card-item">
@@ -184,32 +174,12 @@
                     <p>Business<br />
                       Development</p>
                   </div>
-
+               
                   <div class="card-item">
                     <div class="photo">
                       <img
                         class="main-state"
-                        src="images/icon/graphic.svg"
-                        alt=""
-                      />
-                      <img
-                        class="hover"
-                        src="images/icon/graphic-hover.svg"
-                        alt=""
-                      />
-                    </div>
-                    <p>Graphic<br />
-                      Designer</p>
-                  </div>
-
-                </div>
-
-                <div class="carousel-item">
-                  <div class="card-item">
-                    <div class="photo">
-                      <img
-                        class="main-state"
-                        src="imgages/icon/pm.svg"
+                        src="images/icon/pm.svg"
                         alt=""
                       />
                       <img
@@ -221,42 +191,8 @@
                     <p>Project<br />
                       Management</p>
                   </div>
-
-                  <div class="card-item">
-                    <div class="photo">
-                      <img
-                        class="main-state"
-                        src="images/icon/marketing.svg"
-                        alt=""
-                      />
-                      <img
-                        class="hover"
-                        src="images/icon/marketing-active.svg"
-                        alt=""
-                      />
-                    </div>
-                    <p>Marketing &<br />
-                      Communication</p>
-                  </div>
-
-                </div>
-              </div>
-              <div class="carousel-nav">
-                <a
-                  class="nav-item"
-                  role="button"
-                  data-bs-target="#carouselsidebar"
-                  data-bs-slide="prev"
-                ><img src="images/icon/prew-arrow.svg" alt="" /></a>
-                <a
-                  class="nav-item"
-                  role="button"
-                  data-bs-target="#carouselsidebar"
-                  data-bs-slide="next"
-                ><img src="images/icon/next-arrow.svg" alt="" /></a>
               </div>
             </div>
-
           </div>
 
           <div class="recent-posts my-5">
@@ -366,7 +302,7 @@
         <p class="text-muted">
           Sign up and receive the latest tips via email.
         </p>
-        <form id="subscribe" action="">
+        <form id="subscribe" action="/subscribe" method="post">
           <label for="email">Youre e-mail:</label>
           <input type="email" placeholder="e-mail:" name="email" required />
           <button type="submit" class="main-btn">Subscribe</button>

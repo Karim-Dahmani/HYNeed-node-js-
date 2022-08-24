@@ -6,6 +6,9 @@
   padding: 0;
 }
 
+.published {
+  margin-left: 60%;
+}
 html {
   scroll-padding-top: 120px;
 }
@@ -488,6 +491,9 @@ ul.list-in-text li:before {
 .all-posts .post-item {
   margin-bottom: 50px;
   position: relative;
+  border: solid 1px;
+  padding: 20px;
+  border-radius: 5px;
 }
 .all-posts .post-item .post-img img {
   height: 100%;
